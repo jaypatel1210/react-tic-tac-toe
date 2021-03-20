@@ -70,6 +70,8 @@ const App = () => {
       itemArray[4] === itemArray[6]
     ) {
       setWinMsg(`${itemArray[2]} won`);
+    } else {
+      checkAllFilled();
     }
   }
 
@@ -84,7 +86,6 @@ const App = () => {
       return toast('Already Filled', { type: 'warning' });
     }
     checkWinner();
-    checkAllFilled();
   }
   const checkAllFilled = () => {
     let count = 0;
@@ -96,7 +97,7 @@ const App = () => {
       }
     );
     if (count === 9) {
-      setWinMsg('All Filled Try Again');
+      setWinMsg('Try Again');
     }
   }
   return (
